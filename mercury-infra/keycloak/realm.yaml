@@ -1,0 +1,25 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  name: mercury-realm
+  labels:
+    app: mercury
+spec:
+  realm:
+    id: mercury
+    realm: mercury
+    enabled: True
+    displayName: Mercury Realm
+    roles:
+      realm:
+        - name: rest-all
+        - name: analyst
+        - name: developer
+        - name: manager
+        - name: admin
+        - name: user
+        - name: process-admin
+        - name: marketing
+  instanceSelector:
+    matchLabels:
+      app: mercury

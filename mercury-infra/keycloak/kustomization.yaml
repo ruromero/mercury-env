@@ -1,0 +1,9 @@
+resources:
+  - subscription.yaml
+  - kafka.yaml
+
+commonLabels:
+  app: mercury
+  mercury: infra
+
+namespace: mercury-infra

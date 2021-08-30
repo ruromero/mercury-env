@@ -1,0 +1,15 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: rhsso-operator
+  labels:
+    operators.coreos.com/rhsso-operator.mercury-common: ""
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: rhsso-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: rhsso-operator.7.4.7

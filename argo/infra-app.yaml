@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mercury-infra
+  namespace: mercury-infra
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ruromero/mercury-env.git
+    targetRevision: HEAD
+    path: mercury-infra/templates
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mercury-infra
