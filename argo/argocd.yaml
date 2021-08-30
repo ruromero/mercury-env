@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: bian-argo
+  namespace: mercury-infra
+  labels:
+    app: mercury
+spec:
+  server:
+    route: enabled
+  redis:
+    image: quay.io/ruben/redis
+    version: 6.2.4-alpine
+  dex:
+    openShiftOAuth: true
+  rbac:
+    defaultPolicy: 'role:readonly'
+    policy: |
+      g, system:cluster-admins, role:admin
+    scopes: '[groups]'
