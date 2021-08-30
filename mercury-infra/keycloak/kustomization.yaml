@@ -8,4 +8,5 @@ resources:
 commonLabels:
   app: mercury
   mercury: infra
+  mercury-infra: keycloak
 namespace: mercury-infra

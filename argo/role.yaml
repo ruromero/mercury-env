@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: mercury-infra
+  name: argocd-subscription-role
+rules:
+- apiGroups: ["operators.coreos.com"]
+  resources: ["subscriptions"]
+  verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argocd-subscription-rolebinding
+  namespace: mercury-infra
+subjects:
+- kind: ServiceAccount
+  name: bian-argo-argocd-application-controller
+roleRef:
+  kind: Role
+  name: argocd-subscription-role
+  apiGroup: rbac.authorization.k8s.io
