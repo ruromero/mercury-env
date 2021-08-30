@@ -1,9 +1,11 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
   - subscription.yaml
-  - kafka.yaml
-
+  - keycloak.yaml
+  - realm.yaml
+  - users.yaml
 commonLabels:
   app: mercury
   mercury: infra
-
 namespace: mercury-infra
