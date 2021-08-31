@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/ruromero/mercury-env.git
     targetRevision: HEAD
-    path: mercury-infra/templates
+    path: mercury-infra/overlays/dev-rhlab
   destination:
     server: https://kubernetes.default.svc
     namespace: mercury-infra

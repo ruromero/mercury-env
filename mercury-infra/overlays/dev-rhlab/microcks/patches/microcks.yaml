@@ -1,0 +1,12 @@
+apiVersion: microcks.github.io/v1alpha1
+kind: MicrocksInstall
+metadata:
+  name: bm
+spec:
+  features:
+    async: 
+      kafka:
+        url: mercury-kafka-kafka-bootstrap:9092
+  keycloak:
+    url: https://keycloak-mercury-infra.apps.mw-ocp4.cloud.lab.eng.bos.redhat.com
+    privateUrl: https://keycloak.mercury-infra.svc:8443

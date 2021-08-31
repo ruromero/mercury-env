@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: microcks
+spec:
+  source:
+    path: mercury-infra/overlays/dev-rhlab/microcks
+  destination:
+    namespace: mercury-infra

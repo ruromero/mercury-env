@@ -1,10 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - strimzi-app.yaml
-  - keycloak-app.yaml
-  - microcks-app.yaml
+ - ../namespace
+ - ../../../base/keycloak
+# TODO: Refactor
 commonLabels:
   app: mercury
   mercury: infra
+  mercury-infra: keycloak
 namespace: mercury-infra

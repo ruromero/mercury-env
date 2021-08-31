@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: strimzi
+spec:
+  source:
+    path: mercury-infra/overlays/common/strimzi
+  destination:
+    namespace: mercury-infra
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak
+spec:
+  source:
+    path: mercury-infra/overlays/common/keycloak
+  destination:
+    namespace: mercury-infra

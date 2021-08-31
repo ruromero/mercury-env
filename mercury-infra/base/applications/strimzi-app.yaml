@@ -1,13 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: microcks
+  name: strimzi
 spec:
   project: default
   source:
     repoURL: https://github.com/ruromero/mercury-env.git
     targetRevision: HEAD
-    path: mercury-infra/microcks
+    path: mercury-infra/base/strimzi
   destination:
     server: https://kubernetes.default.svc
-    namespace: mercury-infra

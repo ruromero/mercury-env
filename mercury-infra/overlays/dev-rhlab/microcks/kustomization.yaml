@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+ - ../../../base/microcks
+patchesStrategicMerge:
+  - patches/microcks.yaml
+# TODO: Refactor
+commonLabels:
+  app: mercury
+  mercury: infra
+  mercury-infra: microcks
+namespace: mercury-infra

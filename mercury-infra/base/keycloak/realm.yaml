@@ -2,8 +2,6 @@ apiVersion: keycloak.org/v1alpha1
 kind: KeycloakRealm
 metadata:
   name: mercury-realm
-  labels:
-    app: mercury
 spec:
   realm:
     id: mercury
