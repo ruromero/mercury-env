@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - strimzi-app.yaml
   - keycloak-app.yaml
+  - microcks-app.yaml
 commonLabels:
   app: mercury
   mercury: infra

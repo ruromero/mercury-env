@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - subscription.yaml
+  - microcks.yaml
+commonLabels:
+  app: mercury
+  mercury: infra
+  mercury-infra: microcks
+namespace: mercury-infra
+vars:
+  - name: KEYCLOAK_EXTERNAL_URL
+    objref:
+      name: mercury-keycloak
+      kind: Keycloak
+      apiVersion: keycloak.org/v1alpha1
+    fieldref:
+      fieldpath: status.externalURL
+  - name: KEYCLOAK_INTERNAL_URL
+    objref:
+      name: mercury-keycloak
+      kind: Keycloak
+      apiVersion: keycloak.org/v1alpha1
+    fieldref:
+      fieldpath: status.internalURL
