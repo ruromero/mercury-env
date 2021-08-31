@@ -1,15 +1,13 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: rhsso-operator
-  labels:
-    operators.coreos.com/rhsso-operator.mercury-common: ""
+  name: keycloak-operator
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
 spec:
   channel: alpha
   installPlanApproval: Automatic
-  name: rhsso-operator
-  source: redhat-operators
+  name: keycloak-operator
+  source: community-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: rhsso-operator.7.4.7
+  startingCSV: keycloak-operator.v15.0.2
