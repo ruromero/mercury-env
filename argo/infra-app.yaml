@@ -5,6 +5,8 @@ metadata:
   namespace: mercury-infra
 spec:
   project: default
+  syncPolicy:
+    automated: {}
   source:
     repoURL: https://github.com/ruromero/mercury-env.git
     targetRevision: HEAD

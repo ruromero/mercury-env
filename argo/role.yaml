@@ -16,6 +16,8 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: bian-argo-argocd-application-controller
+- kind: ServiceAccount
+  name: bian-argo-argocd-server
 roleRef:
   kind: Role
   name: argocd-subscription-role

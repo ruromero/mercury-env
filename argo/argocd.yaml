@@ -6,8 +6,10 @@ metadata:
   labels:
     app: mercury
 spec:
+  image: quay.io/argoproj/argocd
   server:
-    route: enabled
+    route: 
+      enabled: true
   redis:
     image: quay.io/ruben/redis
     version: 6.2.4-alpine
