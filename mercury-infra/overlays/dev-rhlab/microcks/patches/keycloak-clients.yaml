@@ -5,4 +5,4 @@ metadata:
 spec:
   client:
     redirectUris:
-      - "https://bm-mercury-common.apps.mw-ocp4.cloud.lab.eng.bos.redhat.com/*"
+      - "https://bm-mercury-infra.apps.mw-ocp4.cloud.lab.eng.bos.redhat.com/*"
