@@ -4,6 +4,8 @@ metadata:
   name: keycloak-operator
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    operators.coreos.com/keycloak-operator.mercury-infra: ""    
 spec:
   channel: alpha
   installPlanApproval: Automatic

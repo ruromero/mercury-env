@@ -1,9 +1,11 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: microcks-operator
+  name: microcks
   annotations:
     argocd.argoproj.io/sync-wave: "5"
+  labels:
+    operators.coreos.com/microcks.mercury-infra: ""
 spec:
   channel: stable
   installPlanApproval: Automatic

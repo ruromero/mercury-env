@@ -4,6 +4,8 @@ metadata:
   name: strimzi-kafka-operator
   annotations:
     argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    operators.coreos.com/strimzi-kafka-operator.mercury-infra: ''
 spec:
   channel: strimzi-0.22.x
   installPlanApproval: Automatic
