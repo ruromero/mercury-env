@@ -1,0 +1,8 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: microcks-app-js
+spec:
+  client:
+    redirectUris:
+      - "https://bm-mercury-common.apps.mw-ocp4.cloud.lab.eng.bos.redhat.com/*"

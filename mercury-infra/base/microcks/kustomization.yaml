@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - subscription.yaml
   - microcks.yaml
+  - keycloak-clients.yaml

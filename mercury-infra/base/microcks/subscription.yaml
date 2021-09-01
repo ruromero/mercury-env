@@ -3,9 +3,7 @@ kind: Subscription
 metadata:
   name: microcks
   annotations:
-    argocd.argoproj.io/sync-wave: "5"
-  labels:
-    operators.coreos.com/microcks.mercury-infra: ""
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   channel: stable
   installPlanApproval: Automatic

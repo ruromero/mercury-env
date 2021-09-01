@@ -4,6 +4,7 @@ resources:
  - ../../../base/microcks
 patchesStrategicMerge:
   - patches/microcks.yaml
+  - patches/keycloak-clients.yaml
 # TODO: Refactor
 commonLabels:
   app: mercury

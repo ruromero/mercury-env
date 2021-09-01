@@ -15,8 +15,8 @@ spec:
     install: false
     realm: mercury
     # This will have to be changed depending on the generated keycloak route
-    url: https://keycloak-namespace.externalurl.example.com
-    privateUrl: https://keycloak.my-namespace.svc:8443
+    url: keycloak-namespace.externalurl.example.com
+    privateUrl: http://keycloak-discovery.my-namespace.svc:8080/auth
     serviceAccount: microcks-serviceaccount
     serviceAccountCredentials: super-secret
   microcks:

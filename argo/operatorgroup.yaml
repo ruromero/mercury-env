@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: mercury-infra-op-group
+  namespace: mercury-infra
+spec:
+  targetNamespaces:
+    - mercury-infra
