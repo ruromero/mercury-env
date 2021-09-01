@@ -8,7 +8,6 @@ spec:
     firstName: Admin
     lastName: Istrator
     enabled: True
-    emailVerified: False
     credentials:
       - type: password
         value: RedHat1!
@@ -39,7 +38,6 @@ spec:
     firstName: Bernard
     lastName: Bernoulli
     enabled: True
-    emailVerified: False
     credentials:
       - type: password
         value: purple
@@ -61,7 +59,6 @@ spec:
     firstName: Jose
     lastName: Dominguez
     enabled: True
-    emailVerified: False
     credentials:
       - type: password
         value: calatrava
