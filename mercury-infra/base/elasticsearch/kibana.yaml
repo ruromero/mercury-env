@@ -1,0 +1,29 @@
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: mercury-kibana
+spec:
+  count: 1
+  elasticsearchRef:
+    name: mercury-es
+  podTemplate:
+    spec:
+      containers:
+        - name: kibana
+          resources:
+            limits:
+              cpu: '1'
+              memory: 1Gi
+  version: 7.12.1
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: mercury-kibana
+spec:
+  tls:
+    termination: passthrough
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: mercury-kibana-kb-http

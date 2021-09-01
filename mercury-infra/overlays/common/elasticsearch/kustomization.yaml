@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+ - ../../../base/elasticsearch
+# TODO: Refactor
+commonLabels:
+  app: mercury
+  mercury: infra
+  mercury-infra: elasticsearch
+namespace: mercury-infra
