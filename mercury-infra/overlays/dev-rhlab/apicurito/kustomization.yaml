@@ -1,13 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../common
-  - ../../base/applications/apicurito
-  - ../../base/applications/microcks
-patchesStrategicMerge:
-  - patches/app-path.yaml
+ - ../../../base/apicurito
 # TODO: Refactor
 commonLabels:
   app: mercury
   mercury: infra
+  mercury-infra: apicurito
 namespace: mercury-infra

@@ -1,6 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: apicurito
+spec:
+  source:
+    path: mercury-infra/overlays/dev-rhlab/apicurito
+  destination:
+    namespace: mercury-infra
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
   name: microcks
 spec:
   source:
