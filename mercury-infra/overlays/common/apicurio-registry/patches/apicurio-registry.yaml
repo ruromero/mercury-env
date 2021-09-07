@@ -5,4 +5,4 @@ metadata:
 spec:
   configuration:
     kafkasql:
-      bootstrapServers: "mercury-kafka-kafka-bootstrap.mercury-infra.svc:9092"
+      bootstrapServers: "mercury-kafka-kafka-bootstrap.mercury-infra.svc:9093"
