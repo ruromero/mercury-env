@@ -4,3 +4,4 @@ resources:
   - strimzi-app.yaml
   - keycloak-app.yaml
   - elasticsearch-app.yaml
+  - apicurio-registry-app.yaml

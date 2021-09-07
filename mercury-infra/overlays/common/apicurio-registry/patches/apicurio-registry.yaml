@@ -1,0 +1,8 @@
+apiVersion: registry.apicur.io/v1
+kind: ApicurioRegistry
+metadata:
+  name: mercury-registry
+spec:
+  configuration:
+    kafkasql:
+      bootstrapServers: "mercury-kafka-kafka-bootstrap.mercury-infra.svc:9092"

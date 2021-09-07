@@ -27,3 +27,13 @@ spec:
     path: mercury-infra/overlays/common/elasticsearch
   destination:
     namespace: mercury-infra
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apicurio-registry
+spec:
+  source:
+    path: mercury-infra/overlays/common/apicurio-registry
+  destination:
+    namespace: mercury-infra

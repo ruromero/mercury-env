@@ -1,0 +1,13 @@
+apiVersion: registry.apicur.io/v1
+kind: ApicurioRegistry
+metadata:
+  name: mercury-registry
+spec:
+  configuration:
+    persistence: "kafkasql"
+    kafkasql:
+      bootstrapServers: "mercury-kafka-kafka-bootstrap.my-namespace.svc:9093"
+      security:
+        tls:
+          keystoreSecretName: registry-user
+          truststoreSecretName: mercury-kafka-cluster-ca-cert

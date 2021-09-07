@@ -14,18 +14,20 @@ spec:
       transaction.state.log.min.isr: 1
       transaction.state.log.replication.factor: 1
     listeners:
-    - name: plain
-      port: 9092
-      tls: false
-      type: internal
     - name: tls
       port: 9093
       tls: true
+      authentication:
+        type: tls
       type: internal
     - name: external
       port: 9094
       tls: true
       type: route
+      authentication:
+        type: tls
+    authorization:
+      type: simple
     replicas: 1
     storage:
       type: jbod
