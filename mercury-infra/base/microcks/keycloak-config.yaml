@@ -1,0 +1,113 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: microcks-app-js
+spec:
+  realmSelector:
+    matchLabels:
+      app: mercury
+  client:
+    clientId: microcks-app-js
+    publicClient: true
+    webOrigins: 
+      - "+"
+    redirectUris:
+      - "https://bm-mercury-infra.apps.mw-ocp4.cloud.lab.eng.bos.redhat.com/*"
+    standardFlowEnabled: true
+    protocol: openid-connect
+    enabled: true
+    fullScopeAllowed: false
+    defaultClientScopes:
+      - web-origins
+      - role_list
+      - profile
+      - roles
+      - email
+    optionalClientScopes:
+      - address
+      - phone
+      - offline_access
+      - microprofile-jwt
+  scopeMappings:
+    clientMappings:
+      realm-management:
+        client: microcks-app-js
+        mappings:
+          - name: manage-clients
+          - name: manage-users
+      microcks-app:
+        client: microcks-app-js
+        mappings:
+        - name: user
+        - name: admin
+        - name: manager
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: microcks-app
+spec:
+  realmSelector:
+    matchLabels:
+      app: mercury
+  roles:
+    - clientRole: true
+      containerId: microcks
+      name: user
+      composite: false
+    - clientRole: true
+      containerId: microcks
+      name: admin
+      composite: false
+    - clientRole: true
+      containerId: microcks
+      name: manager
+      composite: false
+  client:
+    clientId: microcks-app
+    bearerOnly: true
+    enabled: true
+    protocol: openid-connect
+    secret: super-secret
+    defaultRoles:
+      - user
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: microcks-serviceaccount
+spec:
+  realmSelector:
+    matchLabels:
+      app: mercury
+  client:
+    clientId: microcks-serviceaccount
+    name: microcks-serviceaccount
+    clientAuthenticatorType: client-secret
+    secret: super-secret
+    enabled: true
+    protocol: openid-connect  
+    serviceAccountsEnabled: true
+    directAccessGrantsEnabled: true
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakUser
+metadata:
+  name: mercury-microcks
+spec:
+  user:
+    username: microcks
+    firstName: Microcks
+    lastName: Perez
+    enabled: True
+    credentials:
+      - type: password
+        value: microcks
+    clientRoles:
+      microcks-app:
+       - user
+       - admin
+       - manager
+  realmSelector:
+    matchLabels:
+      app: mercury

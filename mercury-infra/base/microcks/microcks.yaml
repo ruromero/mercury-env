@@ -16,7 +16,6 @@ spec:
     realm: mercury
     # This will have to be changed depending on the generated keycloak route
     url: keycloak-namespace.externalurl.example.com
-    privateUrl: http://keycloak-discovery.my-namespace.svc:8080/auth
     serviceAccount: microcks-serviceaccount
     serviceAccountCredentials: super-secret
   microcks:
